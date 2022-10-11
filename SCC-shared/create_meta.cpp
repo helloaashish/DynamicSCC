@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
     {
         cout << "INPUT ERROR:: Could not open SCC file\n";
     }
-    int nodes = atoi(argv[4]);
+    int nodes = atoi(argv[3]);
 
     q = clock();
     D_Network X;
@@ -360,29 +360,29 @@ int main(int argc, char *argv[])
     // STEP 1 Read changed EDGES
     // STEP 2 Convert changed EDGES
 
-    vector<int_int> inserts;
-    vector<int_int> deletes;
-    readin_changes(&inserts, &deletes, argv[3]);
+    // vector<int_int> inserts;
+    // vector<int_int> deletes;
+    // readin_changes(&inserts, &deletes, argv[3]);
 
-    vector<int_int> inserts_meta(inserts.size());
-    vector<int_int> deletes_meta(deletes.size());
+    // vector<int_int> inserts_meta(inserts.size());
+    // vector<int_int> deletes_meta(deletes.size());
 
-    inserts_meta = convert_to_meta_edge(inserts, SCCx);
-    deletes_meta = convert_to_meta_edge(deletes, SCCx);
+    // inserts_meta = convert_to_meta_edge(inserts, SCCx);
+    // deletes_meta = convert_to_meta_edge(deletes, SCCx);
 
-    cout << "Insert edges: " << endl;
-    printarr_2(&inserts, inserts.size());
-    cout << endl
-         << "Insert metaEdges: " << endl;
-    printarr_2(&inserts_meta, inserts_meta.size());
-    cout << endl
-         << "Delete Edges: " << endl;
-    printarr_2(&deletes, deletes.size());
-    cout << endl
-         << "Delete metaEdges: " << endl;
-    printarr_2(&deletes_meta, deletes_meta.size());
+    // cout << "Insert edges: " << endl;
+    // printarr_2(&inserts, inserts.size());
+    // cout << endl
+    //      << "Insert metaEdges: " << endl;
+    // printarr_2(&inserts_meta, inserts_meta.size());
+    // cout << endl
+    //      << "Delete Edges: " << endl;
+    // printarr_2(&deletes, deletes.size());
+    // cout << endl
+    //      << "Delete metaEdges: " << endl;
+    // printarr_2(&deletes_meta, deletes_meta.size());
 
-    handle_inserts(metaNetwork, inserts_meta, junction_source, junction_sink);
+    // handle_inserts(metaNetwork, inserts_meta, junction_source, junction_sink);
 
     return 0;
 }
